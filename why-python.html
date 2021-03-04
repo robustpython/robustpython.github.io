@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/theme/robust-python-logo-circle.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/theme/tailwind.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"
+            integrity="sha512-zol3kFQ5tnYhL7PzGt0LnllHHVWRGt2bTCIywDiScVvLIlaDOVJ6sPdJTVi0m3rA660RT+yZxkkRzMbb1L8Zkw=="
+            crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    <script>
+        hljs.highlightAll();
+        /* document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('p code').forEach((block) => {
+                block.classList.add("python");
+                hljs.highlightBlock(block);
+            });
+        }); */
+    </script>
+
+            <title>Robust Python - Why Python</title>
+        <meta charset="utf-8"/>
+        <meta name="generator" content="Pelican"/>
+
+
+
+
+
+</head>
+
+<body class="font-sans bg-gray-700">
+<div class="relative bg-white min-h-screen flex-col md:flex">
+    <!-- header -->
+    <div class="px-2  border-t-4 border-gray-700">
+        <div class="max-w-4xl mx-auto sm:flex justify-start items-center border-b-2 py-3 border-gray-100">
+            <div class="hidden sm:inline justify-start">
+                <a class="" href="/">
+                    <img class="mx-2.5" src="/theme/robust-python-logo-flat.png" width="50" height="51">
+                </a>
+            </div>
+            <div class="sm:flex flex-grow justify-start items-center sm:items-baseline">
+                <div class="inline sm:hidden flex items-center justify-center">
+                    <a class="justify-end" href="/">
+                        <img class="mx-2.5 rounded-full inline" src="/theme/robust-python-logo-flat.png" width="50"
+                             height="50">
+                    </a>
+                    <h1 class="inline text-gray-800 font-headline font-medium text-3xl">Robust Python</h1>
+                </div>
+                <h1 class="hidden sm:inline text-gray-800 font-headline font-medium text-3xl">Robust Python</h1>
+                <nav class="sm:flex min-h-full font-headline font-medium justify-end flex-1">
+                    <ul class="text-center">
+                        <li class="sm:inline my-1 sm:mx-3 items-baseline">
+                            <a class="text-gray-500 hover:text-gray-800 "
+                               href="/">Home</a>
+                        </li>
+                                <li class="sm:inline my-1 sm:mx-3">
+                                    <a class="text-gray-500 hover:text-gray-800  "
+                                       href="/category/python.html">Python</a>
+                                </li>
+                                <li class="sm:inline my-1 sm:mx-3">
+                                    <a class="text-gray-500 hover:text-gray-800"
+                                       href="/pages/about.html">About</a>
+                                </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="md:flex mt-12 max-w-4xl mx-auto md:flex-grow">
+        <!-- content -->
+        <div class="md:flex-auto px-5 max-w-2xl">
+    <section id="content" class="mx-auto max-w-2xl font-sans text-gray-800 text-lg">
+        <header>
+
+            <h1 class="font-headline text-4xl mb-4 text-gray-800">
+                <a href="/why-python.html" rel="bookmark"
+                   title="Permalink to Why Python">Why Python</a></h1>
+            <time class="text-gray-500 font-sans font-medium text-base" datetime="2021-03-04T16:31:00+01:00">
+                Thu 04 March 2021
+            </time>
+        </header>
+        <footer class="">
+
+        </footer><!-- /.post-info -->
+        <div id="full-article" class="mt-7">
+            <p>Python is a great programming language to learn and use. </p>
+<p>These are my reasons why I use it. </p>
+<p>I also use other programming languages, but I think Python is best balanced 
+language in terms of beauty, usefulness and practicality.</p>
+<h2>Syntax</h2>
+<p>Most mainstream languages today have C-style syntax (C, Java, JavaScript, C#, 
+Go etc).</p>
+<p>While this syntax is fine and familiar it is quite verbose and allows 
+programmers to go really wild with the code formatting. </p>
+<p>Python took a different approach and is not using curly braces to delimit code 
+blocks. Rather it's using significant white spaces and code blocks are 
+indented. Worth mentioning is the fact that in Python you don't use semicolon <code>;</code> 
+at the end of the line.</p>
+<p>Take this function written in C-style language for example:</p>
+<pre><code class="language-jsx">function my_function(p1, p2) {
+    if (p1 &gt; p2) {
+        function_a();
+      }
+    else {
+        function_b();
+    }
+}
+</code></pre>
+<p>you can also write it like</p>
+<pre><code class="language-jsx">function my_function(p1, p2) {
+    if (p1 &gt; p2) {function_a();}
+    else 
+    { 
+          function_b();
+    function_c();
+    }
+}
+</code></pre>
+<p>and it will do exactly same thing.</p>
+<p>We can write same  function in Python like this:</p>
+<pre><code class="language-python">def my_function(p1, p2):
+    if p1 &gt; p2:
+        function_a()
+    else:
+        function_b()
+        function_c()
+</code></pre>
+<p>But if you change it to</p>
+<pre><code class="language-python">def my_function(p1, p2):
+    if p1 &gt; p2:
+        function_a()
+    else:
+        function_b()
+    function_c()
+</code></pre>
+<p>It is now a different function because <code>function_c</code> will always be called while 
+before it was called only  as a part of <code>else</code> branch. </p>
+<p>This has an impact on readability and maintainability of the code as programmers 
+are forced to style code well in order to make it run.</p>
+<p>Python was designed to be highly readable language which is important because 
+code is written once but read many times. </p>
+<p>Python is also using english words instead of punctuations for logical 
+operators. For <em>AND</em> operation it uses word <code>and</code> instead of <code>&amp;&amp;</code>, for <em>OR</em> it
+uses word <code>or</code> instead of <code>||</code> , for <em>NOT</em> it uses word <code>not</code> instead of <code>!</code>. </p>
+<p>In C style language:</p>
+<pre><code class="language-jsx">if (x &gt; 5 &amp;&amp; y &gt; 8 || z == 10) {
+    // Do the thing
+}
+</code></pre>
+<p>In Python:</p>
+<pre><code class="language-python">if x &gt; 5 and y &gt; 8 or z == 10:
+    # Do the thing
+</code></pre>
+<h2>Conciseness</h2>
+<p>This is partly related to syntax which we've discussed above but Python has 
+some really great ways how to do things. </p>
+<p>Python is very concise language. </p>
+<p>It allows you to do a lot with very little code. That is important because it 
+makes code easy and fast to read and write.</p>
+<p>You don't have to write a lot of code that is not directly related to the thing
+you're trying to achieve. This saves you time and mental energy.</p>
+<p>Let's say we want to check that variable <code>number</code> is bigger than <code>5</code> and 
+smaller than <code>10</code>. In C style languages you would do:</p>
+<pre><code class="language-jsx">if (number &gt; 5 &amp;&amp; number &lt; 10) {
+    // Do the thing
+} 
+</code></pre>
+<p>in Python, we have chained comparison, and you can do:</p>
+<pre><code class="language-python">if 5 &lt; number &lt; 10:
+    # Do the thing
+</code></pre>
+<p>It's a similar story if you want to get part of a list (array). In Python, you 
+can use slicing:</p>
+<pre><code class="language-python">numbers = [1, 2, 3 , 4, 5]
+
+first_two = numbers[:2]
+</code></pre>
+<p>while in C style languages you'd do:</p>
+<pre><code class="language-jsx">let numbers = [1, 2, 3, 4, 5];
+
+let first_two = numbers.slice(0, 2)
+</code></pre>
+<p>With <code>in</code> operator we can check if item is in the list or other data structure. </p>
+<p>To check if number is in the list we'd write:</p>
+<pre><code class="language-python">numbers = [1, 2, 3, 4, 5]
+
+if 5 in numbers:
+    # Do the thing
+</code></pre>
+<p>Or if a key is in the dictionary: </p>
+<pre><code class="language-python">if 'my_key' in my_dict:
+   # Do the thing
+</code></pre>
+<p>It can be also used to check if a string contains another string </p>
+<pre><code class="language-python">if 'python' in 'Robust python':
+    # Do the thing
+</code></pre>
+<p>Comprehensions are another great feature of Python which makes our code super 
+concise. </p>
+<p>You can create a list, a set or a dictionary in one line. 
+You can also map and filter with them. For example, to create a list of squares 
+of numbers from one to ten in C style language you'd do:</p>
+<pre><code class="language-jsx">let squares = [];
+
+for (i = 1; i &lt;= 10; i++) { 
+    squares.push(i*i)
+}
+</code></pre>
+<p>In Python, we can achieve the same with:</p>
+<pre><code class="language-python">squares = [i * i for i in range(1, 11)]
+</code></pre>
+<p>To get only squares bigger than 50, in Python we could just do:</p>
+<pre><code class="language-python">big = [s for s in squares if s &gt; 50]
+</code></pre>
+<p>This conciseness and clarity of Python  makes you very productive as a developer
+while your code is still easily readable and understandable to others.</p>
+<h2>Multi paradigm</h2>
+<p>In Python, we can choose which programming paradigm we want to use for our 
+program. </p>
+<p>You can do most traditional 
+<a href="https://en.wikipedia.org/wiki/Procedural_programming">imperative (procedural)</a> 
+programming where series of statements are executed in order.</p>
+<p>Python also supports 
+<a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object oriented programming</a> 
+paradigm where you create hierarchies of classes with methods. It supports 
+polymorphism, inheritance (including multiple inheritance) and other OOP 
+concepts.</p>
+<p>Last but not the least Python has a great support for functional programming. It
+has list, dict, sets and generator expression - comprehensions.<br>
+All functions in Python are 
+<a href="https://en.wikipedia.org/wiki/First-class_function">first class functions</a> 
+, so they can be passed around and manipulated as any other object. This allows 
+it to have 
+<a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order functions</a>
+like map,
+filter and reduce. Lot of other functions to support functional programming is 
+in <em>itertools</em> and <em>functools</em> modules.</p>
+<h2>Versatile</h2>
+<p>We can do pretty much anything in Python. </p>
+<ul>
+<li>simple scripts to automate some trivial tasks</li>
+<li>websites with millions of users</li>
+<li>heavy data processing backends</li>
+<li>APIs</li>
+<li>desktop apps</li>
+<li>software for IoT (Internet of Things, think RaspberryPi, Arduino etc.)</li>
+<li>data visualisation</li>
+<li>ML</li>
+<li>and so much more</li>
+</ul>
+<p>That is why many major companies (Amazon, Google, Netflix, 
+Instagram, Dropbox, Spotify, NASA and so on) and millions of small companies 
+and independent developer across the world use Python.</p>
+<h2>Runs almost everywhere</h2>
+<p>Python runs on most of the relevant platforms today. It runs on x86, x86_64 and
+ARM. It also runs on all major operating systems of today - Linux, Windows, 
+macOS and even FreeBSD.</p>
+<p>You can write your code where you prefer, and it can be run almost anywhere.</p>
+<h2>Community and libraries</h2>
+<p>Python is open source, independent and community driven language. 
+It has a vast community of developers and enthusiasts.  </p>
+<p>They're very supportive and friendly which is huge benefit for both new and 
+expert developers. </p>
+<p>Community is dedicated to maintain and spread the language and that means there
+is an astonishing amount of libraries to help you with whatever you need to do.</p>
+<p>Frameworks like Django and Flask (for web development), Numpy, Panda , NLTK, 
+PyTorch (for ML and data science) and thousands of libraries for almost anything
+you can think of which are free to use and open source.</p>
+<p>There are thousands of Python developers willing to help you with your problem 
+if you just ask.</p>
+<h2>Machine Learning and Data science</h2>
+<p>Machine learning and data science are on the rise over the last few years and 
+will continue to grow in coming years. </p>
+<p>You can use any language for ML and data science related tasks but Python has 
+become a preferred  language for this domain. Most companies and even most of 
+the tutorials and courses use Python as the language of choice for ML domain.</p>
+<p>It's thanks to Python's strengths which we mentioned already above:</p>
+<ul>
+<li>syntax and conciseness - which makes developers very productive and allows even beginners to write good code</li>
+<li>exhaustive libraries which gives you solution to all existing problems</li>
+<li>community build around whole ML domain</li>
+</ul>
+<p>So, if you're interested in Machine learning then Python is definitely language 
+you want to learn.</p>
+<h2>Gradual typing</h2>
+<p>Python is a dynamic language. </p>
+<p>It has its advantages and disadvantages which I don't want to discuss here in 
+detail, but it means you can write code without worrying about types and 
+compiler which is checking them. </p>
+<p>This is great if you need to just write a little script to automate something, 
+or you want to build a prototype of the idea (Minimal Viable Product) or have 
+a smaller project with few people.</p>
+<p>However, for bigger projects with more developers types are very useful as they 
+help you write more robust code, and you can catch more errors before the code 
+is run. </p>
+<p>It would look like this:</p>
+<pre><code class="language-python">from typing import List
+
+def function_a(a: int, b: List[str]):
+    pass
+</code></pre>
+<p>In above function  parameter <code>a</code> has to be of type <code>int</code> and parameter <code>b</code> must 
+be list of strings - <code>List[str]</code>.</p>
+<p>Beauty of Python is that you can have both. You can write your code without 
+types, but you can also add type annotations if you want to. </p>
+<p>Then you can use static type checker like <a href="http://mypy-lang.org">mypy</a> to do 
+the type checking for you to help you catch any possible errors. 
+You can choose to use types from beginning of the project (or after you've build
+MVP), or you can start your project without types and introduce them much later 
+when your code base and number of developers grow.</p>
+<h2>Career</h2>
+<p>Python has been around for 30 years and over time it's only growing in 
+popularity. It is used in startups, small and medium companies as well as
+in big enterprises. 
+This creates constant demand for Python programmers all over the world. 
+And Python jobs come with high salaries.
+Whether you want to build a career as an employee in small or big company, or
+you want to be an independent developer or build your own business, Python is 
+going to serve you well.</p>
+        </div><!-- /.entry-content -->
+    </section>
+        </div>
+        <!-- sidebar -->
+    </div>
+    <!-- footer -->
+    <footer class="text-center p-5 mt-20 bg-gray-700 text-gray-50">
+        © Robust Python 2021
+        <br>
+        <span class="text-sm">Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a href="https://www.python.org/">Python</a>.</span>
+    </footer>
+</div>
+</body>
+
+</html>
