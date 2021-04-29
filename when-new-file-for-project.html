@@ -24,9 +24,15 @@
         }); */
     </script>
 
-        <title>Robust Python - python tag</title>
+            <title>Robust Python - When to make a new .py file for a project?</title>
         <meta charset="utf-8"/>
         <meta name="generator" content="Pelican"/>
+
+
+
+
+        <meta name="tags" content="python"/>
+
 </head>
 
 <body class="font-sans bg-gray-700">
@@ -55,12 +61,12 @@
                                href="/">Home</a>
                         </li>
                                 <li class="sm:inline my-1 sm:mx-3">
-                                    <a class="text-gray-600 hover:text-gray-800 "
-                                       href="../category/python.html">Python</a>
+                                    <a class="text-gray-600 hover:text-gray-800  "
+                                       href="./category/python.html">Python</a>
                                 </li>
                                 <li class="sm:inline my-1 sm:mx-3">
                                     <a class="text-gray-600 hover:text-gray-800"
-                                       href="../about.html">About</a>
+                                       href="./about.html">About</a>
                                 </li>
 
                     </ul>
@@ -72,42 +78,67 @@
     <div class="md:flex mt-12 max-w-4xl mx-auto md:flex-grow">
         <!-- content -->
         <div class="md:flex-auto px-5 max-w-2xl">
-    <section id="content" class="max-w-xl">
+    <section id="content" class="mx-auto max-w-2xl font-sans text-gray-800 text-lg">
+        <header>
 
-            <article class="mb-12 text-gray-800 font-sans">
+            <h1 class="font-headline text-4xl mb-4 text-gray-800">
+                <a href="./when-new-file-for-project.html" rel="bookmark"
+                   title="Permalink to When to make a new .py file for a project?">When to make a new .py file for a project?</a></h1>
+            <time class="text-gray-500 font-sans font-medium text-base" datetime="2021-04-29T17:28:00+02:00">
+                Thu 29 April 2021
+            </time>
+        </header>
+        <footer class="">
 
-                <header>
-                    <h2 class="font-medium font-headline text-xl mb-2">
-                        <a href="../when-new-file-for-project.html" rel="bookmark"
-                           title="Permalink to When to make a new .py file for a project?">When to make a new .py file for a project?</a>
-                    </h2>
-                </header>
-                <footer class="font-headline text-sm text-gray-500">
-                    <time class="published" datetime="2021-04-29T17:28:00+02:00"> Thu 29 April 2021 </time>
-                </footer><!-- /.post-info -->
-                <div class="mt-5 mb-2"> <p>How do I determine when to make a new .py file for a project?</p> </div><!-- /.entry-content -->
-                <a href="../when-new-file-for-project.html" rel="bookmark"
-                   class="text-sm font-headline text-gray-500"
-                   title="Permalink to When to make a new .py file for a project?">Continue reading →</a>
-            </article>
-            <article class="mb-12 text-gray-800 font-sans">
-
-                <header>
-                    <h2 class="font-medium font-headline text-xl mb-2">
-                        <a href="../why-python.html" rel="bookmark"
-                           title="Permalink to Why Python">Why Python</a>
-                    </h2>
-                </header>
-                <footer class="font-headline text-sm text-gray-500">
-                    <time class="published" datetime="2021-03-04T16:31:00+01:00"> Thu 04 March 2021 </time>
-                </footer><!-- /.post-info -->
-                <div class="mt-5 mb-2"> <p>Python is a great programming language to learn and use. In this article I explain why I use it and enjoy it. I also use other programming languages, but I think Python is best balanced language in terms of beauty, usefulness and practicality.</p> </div><!-- /.entry-content -->
-                <a href="../why-python.html" rel="bookmark"
-                   class="text-sm font-headline text-gray-500"
-                   title="Permalink to Why Python">Continue reading →</a>
-            </article>
-
-
+                <div class="tags">
+                    Tags:
+                        <a href="./tag/python.html">python</a>
+                </div>
+        </footer><!-- /.post-info -->
+        <div id="full-article" class="mt-7">
+            <h2>The problem</h2>
+<p>Most Python project are using multiple python files instead of having all code
+in one file. </p>
+<p>When should you make a new python file for organization? </p>
+<p>If you were making a big app, how would you determine that it would be best to 
+make a new file? </p>
+<p>Should you always try to separate  code into multiple files?</p>
+<h2>Always split?</h2>
+<p>Let's start at the end. Should you always split code into multiple files? </p>
+<p>No, I don't think so. </p>
+<p>Many Python projects are just simple scripts that do one
+thing and are just few tens of lines of code. 
+In this case there is not much point.</p>
+<h2>How to split?</h2>
+<p>The best way is to split your code into files based on WHAT it does.</p>
+<p>Let's say your big app imports some data about companies (invoices, employees,
+customers), does some processing and then generates report. </p>
+<p>You could start with following files: <em>import.py</em>, <em>process.py</em>, 
+<em>report.py</em>. </p>
+<p>When process.py file turns out to be a lot of code (approaching 1000 lines) it's 
+time to split it further based on different parts of your processing e.g. 
+<em>process_invoices.py</em>, <em>process_employees.py</em> and so on. </p>
+<p>Then you'd probably start to organize them into folders - process folder 
+for all the process files. </p>
+<p>So split code logically based on what it does, don't allow files to get too big 
+and group similar files with folder.</p>
+<h2>When should you split?</h2>
+<p>I said above that when file is a lot of code - approaching 1000 lines - it's 
+time to split.</p>
+<p>Why 1000? It's really just my observation and personal preference. How many 
+lines is too many is mostly about personal preference. </p>
+<p>Big files are hard to navigate. 
+Scrolling through 5000 lines of code is not very practical. </p>
+<p>Also when more than one person work on a project, and they use Git it will make
+things even harder if everything is in one or few very big files.</p>
+<p>If you know from beginning that your project is not trivial always split
+logically based on what code does. </p>
+<p>That should be your primary driver for splitting.</p>
+<p>It is then much easier to navigate your project, find things and use version 
+control (Git).</p>
+<h2>Further reading</h2>
+<p>I also wrote about <a href="https://robustpython.com/why-python.html">Why Python is great programming language to learn and use</a></p>
+        </div><!-- /.entry-content -->
 <!-- Begin Mailchimp Signup Form -->
 <link href="https://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
