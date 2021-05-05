@@ -24,16 +24,9 @@
         }); */
     </script>
 
-            <title>Robust Python - Create list of unique items with comprehension</title>
+        <title>Robust Python - comprehensions tag</title>
         <meta charset="utf-8"/>
         <meta name="generator" content="Pelican"/>
-
-
-
-
-        <meta name="tags" content="python"/>
-        <meta name="tags" content="comprehensions"/>
-
 </head>
 
 <body class="font-sans bg-gray-700">
@@ -62,16 +55,12 @@
                                href="/">Home</a>
                         </li>
                                 <li class="sm:inline my-1 sm:mx-3">
-                                    <a class="text-gray-600 hover:text-gray-800  "
+                                    <a class="text-gray-600 hover:text-gray-800 "
                                        href="../category/python.html">Python</a>
                                 </li>
                                 <li class="sm:inline my-1 sm:mx-3">
                                     <a class="text-gray-600 hover:text-gray-800"
                                        href="../about.html">About</a>
-                                </li>
-                                <li class="sm:inline my-1 sm:mx-3">
-                                    <a class="text-gray-600 hover:text-gray-800"
-                                       href="../join.html">Join Robust Python</a>
                                 </li>
 
                     </ul>
@@ -83,72 +72,26 @@
     <div class="md:flex mt-12 max-w-4xl mx-auto md:flex-grow">
         <!-- content -->
         <div class="md:flex-auto px-5 max-w-2xl">
-    <section id="content" class="mx-auto max-w-2xl font-sans text-gray-800 text-lg">
-        <header>
+    <section id="content" class="max-w-xl">
 
-            <h1 class="font-headline text-4xl mb-4 text-gray-800">
-                <a href="../drafts/list-of-unique-items-comprehension.html" rel="bookmark"
-                   title="Permalink to Create list of unique items with comprehension">Create list of unique items with comprehension</a></h1>
-            <time class="text-gray-500 font-sans font-medium text-base" datetime="2021-04-29T17:28:00+02:00">
-                Thu 29 April 2021
-            </time>
-        </header>
-        <footer class="">
+            <article class="mb-12 text-gray-800 font-sans">
 
-                <div class="tags">
-                    Tags:
-                        <a href="../tag/python.html">python</a>
-                        <a href="../tag/comprehensions.html">comprehensions</a>
-                </div>
-        </footer><!-- /.post-info -->
-        <div id="full-article" class="mt-7">
-            <p>List comprehensions are great to operate with lists. But is it possible to 
-create list of unique items with list comprehension?</p>
-<h2>The problem</h2>
-<p>Let's say we have list of posts:</p>
-<pre><code class="language-python">@dataclass(frozen=True)
-class Post:
-    title: str
-    category: str
+                <header>
+                    <h2 class="font-medium font-headline text-xl mb-2">
+                        <a href="../list-of-unique-items-comprehension.html" rel="bookmark"
+                           title="Permalink to Create list of unique items with comprehension">Create list of unique items with comprehension</a>
+                    </h2>
+                </header>
+                <footer class="font-headline text-sm text-gray-500">
+                    <time class="published" datetime="2021-05-05T13:28:00+02:00"> Wed 05 May 2021 </time>
+                </footer><!-- /.post-info -->
+                <div class="mt-5 mb-2"> <p>List comprehensions are great to operate on lists. But, is it possible to create list of unique items with list comprehension?</p> </div><!-- /.entry-content -->
+                <a href="../list-of-unique-items-comprehension.html" rel="bookmark"
+                   class="text-sm font-headline text-gray-500"
+                   title="Permalink to Create list of unique items with comprehension">Continue reading →</a>
+            </article>
 
-posts = [
-    Post(title='first post', category='python'),
-    Post(title='second post', category='python'),
-    Post(title='third post', category='django'),
-    Post(title='fourth post', category='python'),
-    Post(title='fifth post', category='django'),
-]
-</code></pre>
-<p>Now we want to get list of all categories, but we don't want any category to
-appear twice in our list. So the resulting list from above <code>posts</code> list would be
-<code>['pyton', 'django']</code>.</p>
-<h2>The loop</h2>
-<p>With for loop we could do:</p>
-<pre><code class="language-python">categories = []
-for p in posts:
-    if p.category not in categories:
-        categories.append(p.category)
-</code></pre>
-<h2>Comprehension</h2>
-<p>How do we do the same with list comprehension?</p>
-<p>We could try</p>
-<pre><code class="language-python">categories = [p.category for p in posts if p.category not in categories]
-</code></pre>
-<p>but this will not work because <code>categories</code> doesn't exist yet. With 
-comprehension, list is created on the fly, and we don't have it in variable 
-until comprehension is finished.</p>
-<p>We can use set comprehension instead. Set is a data container that contains only 
-unique values, so it will deal with uniqueness for us. We just need to change 
-square brackets to curly brackets.</p>
-<pre><code class="language-python">categories = {p.category for p in posts if p.category not in categories}
-</code></pre>
-<p>Now <code>categories</code> is set. That works fine if we just need any iterable. But, if 
-we specifically need list we need to create list out of set:</p>
-<pre><code class="language-python">categories = list({p.category for p in posts if p.category not in categories})
-</code></pre>
-<p>That's it. We did it with one nice line instead of 4 and without mutating any 
-variable.</p>
-        </div><!-- /.entry-content -->
+
 <!-- Begin Mailchimp Signup Form -->
 <link href="https://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
