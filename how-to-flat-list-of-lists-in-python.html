@@ -24,7 +24,7 @@
         }); */
     </script>
 
-            <title>Robust Python - Create list of unique items with comprehension</title>
+            <title>Robust Python - How to flat list of lists in Python</title>
         <meta charset="utf-8"/>
         <meta name="generator" content="Pelican"/>
 
@@ -32,7 +32,8 @@
 
 
         <meta name="tags" content="python"/>
-        <meta name="tags" content="comprehensions"/>
+        <meta name="tags" content="comprehension"/>
+        <meta name="tags" content="list"/>
 
 </head>
 
@@ -83,64 +84,87 @@
         <header>
 
             <h1 class="font-headline text-4xl mb-4 text-gray-800">
-                <a href="./list-of-unique-items-comprehension.html" rel="bookmark"
-                   title="Permalink to Create list of unique items with comprehension">Create list of unique items with comprehension</a></h1>
-            <time class="text-gray-500 font-sans font-medium text-base" datetime="2021-05-05T13:28:00+02:00">
-                Wed 05 May 2021
+                <a href="./how-to-flat-list-of-lists-in-python.html" rel="bookmark"
+                   title="Permalink to How to flat list of lists in Python">How to flat list of lists in Python</a></h1>
+            <time class="text-gray-500 font-sans font-medium text-base" datetime="2021-05-12T09:28:00+02:00">
+                Wed 12 May 2021
             </time>
         </header>
         <footer class="">
 
         </footer><!-- /.post-info -->
         <div id="full-article" class="mt-7">
-            <p>List comprehensions are great to operate with lists. But is it possible to 
-create list of unique items with list comprehension?</p>
-<h2>The problem</h2>
-<p>Let's say we have list of posts:</p>
-<pre><code class="language-python">@dataclass(frozen=True)
-class Post:
-    title: str
-    category: str
-
-posts = [
-    Post(title='first post', category='python'),
-    Post(title='second post', category='python'),
-    Post(title='third post', category='django'),
-    Post(title='fourth post', category='python'),
-    Post(title='fifth post', category='django'),
+            <p>Let's say we have list of lists like this:</p>
+<pre><code class="language-python">list_of_lists = [
+    ['London', 'Manchester'],
+    ['New York', 'Los Angeles'],
+    ['Rome', 'Milan']
 ]
 </code></pre>
-<p>Now we want to get list of all categories, but we don't want any category to
-appear twice in our list. So the resulting list from above <code>posts</code> list would be
-<code>['pyton', 'django']</code>.</p>
-<h2>The loop</h2>
-<p>With for loop we could do:</p>
-<pre><code class="language-python">categories = []
-for p in posts:
-    if p.category not in categories:
-        categories.append(p.category)
+<p>What's the best way to turn it into simple list that looks like this?</p>
+<pre><code class="language-python">['London', 'Manchester', 'New York', 'Los Angeles', 'Rome', 'Milan']
 </code></pre>
-<h2>Comprehension</h2>
-<p>How do we do the same with list comprehension?</p>
-<p>We could try</p>
-<pre><code class="language-python">categories = [p.category for p in posts if p.category not in categories]
+<h2>Old, imperative way</h2>
+<p>Old, imperative way would be to use inner <code>for</code> loop:</p>
+<pre><code class="language-python">flat = []
+for sublist in list_of_lists:
+    for item in sublist:
+        flat.append(item)
 </code></pre>
-<p>but this will not work because <code>categories</code> doesn't exist yet. With 
-comprehension, list is created on the fly, and we don't have it in variable 
-until comprehension is finished.</p>
-<p>We can use set comprehension instead. Set is a data container that contains only 
-unique values, so it will deal with uniqueness for us. We just need to change 
-square brackets to curly brackets.</p>
-<pre><code class="language-python">categories = {p.category for p in posts if p.category not in categories}
+<p>Four lines of code. </p>
+<p>We need to create empty list. </p>
+<p>Iterate through <code>list_of_lists</code>.</p>
+<p>Then iterate through each <code>sublist</code>.</p>
+<p>Then when we get to item in sublist, append it to our <code>flat</code> list.</p>
+<p>There is a better way.</p>
+<h2>Use list comprehension</h2>
+<p>Let's use list comprehension.</p>
+<pre><code class="language-python">flat = [item for sublist in list_of_lists for item in sublist]
 </code></pre>
-<p>Now <code>categories</code> is set. That works fine if we just need any iterable. But, if 
-we specifically need list we need to create list out of set:</p>
-<pre><code class="language-python">categories = list({p.category for p in posts if p.category not in categories})
+<p>Ok, this is nice and short. What's going on here?</p>
+<p>It is actually quite similar to the inner <code>for</code> loop. </p>
+<p>Let's reformat that comprehension:</p>
+<pre><code class="language-python">flat = [item 
+        for sublist in list_of_lists 
+            for item in sublist]
 </code></pre>
-<p>That's it. We did it with one nice line instead of 4 and without mutating any 
-variable.</p>
+<p>When formatted like this you can see it's basically the same two for loops.  </p>
+<p>We just put what is returned - in this case <code>item</code> - at the start of the 
+comprehension instead of appending to the list with <code>flat.append(item)</code> 
+at the end in original inner <code>for</code> loop.</p>
+<h2>Use itertools</h2>
+<p>For completeness, I want to mention we can use <a href="https://docs.python.org/3/library/itertools.html">itertools</a>. </p>
+<p>There are two functions we could use: <code>chain</code> and <code>chain_iterable</code>.</p>
+<pre><code class="language-python">import itertools
+
+# Using chain, please note * before list_of_lists
+flat1 = chain(*list_of_lists)
+
+# Using chain_iterable
+flat2 = chain.from_iterable(list_of_lists)
+</code></pre>
+<p>These functions however don't return list but rather iterator so if you need
+list you need to create it explicitly.</p>
+<pre><code class="language-python">flat_list_1 = list(chain(*list_of_lists))
+
+flat_list_2 = list(chain.from_iterable(list_of_lists))
+</code></pre>
+<h2>Summary</h2>
+<p>I recommend to use list comprehension. </p>
+<p>It's one line, it doesn't mutate any variable, it is clear to any experienced 
+Python developer, and it's also fastest.</p>
+<p>Also, if you need to apply some function to <code>item</code> you can do it directly as part
+of comprehension:</p>
+<pre><code class="language-python">
+# Notice item.lower()
+flat = [item.lower() for sublist in list_of_lists for item in sublist]
+</code></pre>
+<p>In case you don't want to allocate a list you can also turn it into generator 
+expression with just change of the brackets from <code>[]</code> to <code>()</code>:</p>
+<pre><code class="language-python">flat = (item.lower() for sublist in list_of_lists for item in sublist)
+</code></pre>
 <h2>Further reading</h2>
-<p>I also wrote about <a href="https://robustpython.com/when-new-file-for-project.html">When to make a new .py file for a project</a></p>
+<p>I also wrote about <a href="https://robustpython.com/how-to-merge-dictionaries-in-python.html">How to merge dictionaries in Python</a></p>
         </div><!-- /.entry-content -->
 <!-- Begin Mailchimp Signup Form -->
 <link href="https://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
